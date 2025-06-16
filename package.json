@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "launchpad-dev",
+=======
+  "name": "LaunchPad.dev",
+>>>>>>> 4ebafc0e06f2363b7fa0342824b2797bc8f08918
   "version": "0.1.0",
   "private": true,
   "scripts": {

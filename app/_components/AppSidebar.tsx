@@ -11,7 +11,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Calendar, ChartArea, Globe2, Home, Inbox, Layers2, Search, Settings } from "lucide-react"
+import { Calendar, LineChart, Globe2, Home, Inbox, Layers2, Search, Settings } from "lucide-react"
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
@@ -24,7 +24,7 @@ const items = [
     {
         title: "AI Coach",
         url: "#",
-        icon: ChartArea,
+        icon: LineChart,
     },
     {
         title: "History",

@@ -7,7 +7,7 @@ const aiToolsList = [
     desc: "Chat with AI Agent to clarify your career doubts",
     icon: '/chat-bot.png',
     button: "Let's Chat",
-    path: "/ai-chat"
+    path: "/career-chat"
   },
   {
     name: "AI Resume Analyzer",

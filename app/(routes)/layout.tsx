@@ -1,5 +1,6 @@
 import React from 'react'
 import DashboardProvider from './provider';
+import "@/app/globals.css";
 
 
 function DashboardLayout({

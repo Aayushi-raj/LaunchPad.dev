@@ -11,7 +11,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Calendar, ChartArea, Globe2, Home, Inbox, Layers2, Search, Settings } from "lucide-react"
+import { Calendar, ChartArea, Globe2, Home, Inbox, Layers2, Search, Settings, UserCircle } from "lucide-react"
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
@@ -34,7 +34,7 @@ const items = [
     {
         title: "Account",
         url: "#",
-        icon: Search,
+        icon: UserCircle,
     },
 
 ]
@@ -71,7 +71,7 @@ export function AppSidebar() {
                 </SidebarGroup>
             </SidebarContent>
             <SidebarFooter>
-                <h2 className='p-2 text-gray-400 text-sm'>Copyright @Tubeguruji</h2>
+                <h2 className='p-2 text-gray-400 text-sm'>Copyright @LaunchPad.dev</h2>
             </SidebarFooter>
         </Sidebar>
     )

@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Position } from '@xyflow/react'
+import { Position, Handle } from '@xyflow/react'
 function TurboNode({ data }: any) {
     return (
         <div className='rounded-lg border border-gray-300 bg-yellow-100'>

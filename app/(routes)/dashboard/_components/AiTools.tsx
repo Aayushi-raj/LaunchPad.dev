@@ -21,7 +21,7 @@ const aiToolsList = [
     desc: "Get a personalized roadmap for your dream role",
     icon:'/roadmap.png',
     button: "Generate Roadmap",
-    path: "/roadmap"
+    path: "/ai-tools/ai-roadmap-agent"
   },
   {
     name: "TeamUp – Find Your Dev Team",

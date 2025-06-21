@@ -150,9 +150,10 @@
 // }
 
 
-
 "use client";
 
+import Image from "next/image";
+import { SignInButton, UserButton } from "@clerk/nextjs";
 
 
 import Hero from "./_components/Hero";
@@ -162,9 +163,10 @@ import Testimonials from "./_components/Testimonials";
 import Pricing from "./_components/Pricing";
 import FAQSection from "./_components/FAQSection";
 import Footer from "./_components/Footer";
-
+import { useUser } from "@clerk/nextjs";
 
 export default function page() {
+  const { user } = useUser();
   return (
     <main className="bg-white text-gray-800">
       <Hero />
@@ -177,6 +179,3 @@ export default function page() {
     </main>
   );
 }
-
-
-

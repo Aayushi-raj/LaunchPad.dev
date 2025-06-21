@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function PricingCTA() {
   return (
-    <section className="bg-gradient-to-br from-blue-600 to-indigo-700 py-20 px-6 sm:px-12 lg:px-24 text-white">
+    <section className="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 py-20 px-6 sm:px-12 lg:px-24 text-white">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, scale: 0.95 }}

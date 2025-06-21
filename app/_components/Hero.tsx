@@ -220,7 +220,7 @@ const Index = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-7xl md:text-8xl lg:text-9xl font-black leading-none mb-8">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold tracking-tight leading-tight font-black leading-none mb-8">
             <span className="block text-white tracking-tight">Launch Your</span>
             <span className="block bg-gradient-to-r from-pink-500 via-red-500 to-orange-400 bg-clip-text text-transparent">
               Dev Career

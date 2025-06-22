@@ -7,7 +7,7 @@ function WelcomeBanner() {
             <p className="text-[#02386E]">Turn Confusion into Clarity. Build Your Tech Career with Purpose.
                 Personalized Roadmaps. Real Projects. Teams That Grow Together.
                 Not Just Learning. Becoming.</p>
-            <button className="mt-4 bg-[#02386E] text-white py-2 px-4 rounded">Get Started</button>
+            <button className="mt-4 bg-[#02386E] text-white py-2 px-4 rounded hover:bg-blue-900">Get Started 🚀</button>
         </div>
     )
 }

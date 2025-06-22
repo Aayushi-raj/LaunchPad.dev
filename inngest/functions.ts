@@ -1,12 +1,19 @@
 console.log("📦 AIRoadmapAgent loaded");
 
 import { metadata } from "@/app/layout";
+<<<<<<< HEAD
 import { Inngest, NonRetriableError } from "inngest";
 import { inngest } from "./client";
 import { createAgent, gemini } from "@inngest/agent-kit";
 import ImageKit from "imagekit";
 import { HistoryTable } from "@/configs/schema";
 import { db } from "@/configs/db";
+=======
+import { Inngest } from "inngest";
+import { inngest } from "./client";
+import { createAgent, gemini } from "@inngest/agent-kit";
+
+>>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
 // Simple test function
 export const helloWorld = inngest.createFunction(
   { id: "hello-world" },
@@ -109,6 +116,7 @@ export const AIRoadmapAgent = inngest.createFunction(
     return { success: true, data: saveToDb };
   }
 );
+<<<<<<< HEAD
 
 
 
@@ -345,3 +353,5 @@ export const AiResumeAgent = inngest.createFunction(
 
 
 // Your existing AIRoadmapAgent code can stay the same...
+=======
+>>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb

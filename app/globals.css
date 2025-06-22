@@ -80,6 +80,7 @@ body {
 }
 
 @layer base {
+<<<<<<< HEAD
   * {
     @apply border-border;
   }
@@ -112,4 +113,9 @@ body {
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+=======
+  body {
+    @apply bg-background text-foreground;
+  }
+>>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
 }

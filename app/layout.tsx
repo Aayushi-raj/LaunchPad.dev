@@ -25,6 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+<<<<<<< HEAD
     <ClerkProvider>
       <html lang="en">
         <body className={`${inter.variable} antialiased`}>
@@ -34,5 +35,14 @@ export default function RootLayout({
         </body>
       </html>
     </ClerkProvider>
+=======
+    <html lang="en">
+      <body className={`${inter.variable} antialiased min-h-screen bg-background`}>
+        <Provider>
+          {children}
+        </Provider>
+      </body>
+    </html>
+>>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
   );
 }

@@ -6,6 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
+import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 
 interface Message {
   role: "user" | "assistant";
@@ -32,13 +35,29 @@ export default function CareerChat() {
     setIsLoading(true);
 
     try {
+      // Prepare conversation history for the API (excluding the initial welcome message)
+      const conversationHistory = messages
+        .slice(1) // Skip the initial welcome message
+        .map(msg => ({
+          role: msg.role,
+          content: msg.content
+        }));
+
       const response = await fetch("/api/career-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
+        body: JSON.stringify({ 
+          message: input,
+          conversationHistory: conversationHistory
+        }),
       });
 
       const data = await response.json();
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      
       setMessages((prev) => [...prev, { role: "assistant", content: data.response }]);
     } catch (error) {
       console.error("Error:", error);
@@ -81,10 +100,22 @@ export default function CareerChat() {
                   className={`max-w-[80%] rounded-lg p-3 ${
                     message.role === "user"
                       ? "bg-primary text-primary-foreground"
-                      : "bg-muted"
+                      : "bg-red-100"
                   }`}
                 >
-                  {message.content}
+                  {message.role === 'assistant' ? (
+                    <div className="max-w-full text-white dark:text-black">
+
+                      <ReactMarkdown
+                        rehypePlugins={[rehypeRaw]}
+                        remarkPlugins={[remarkGfm]}
+                      >
+                        {message.content}
+                      </ReactMarkdown>
+                    </div>
+                  ) : (
+                    message.content
+                  )}
                 </div>
               </div>
             ))}

@@ -10,21 +10,7 @@ function Provider({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-
-    const { user } = useUser();
-    useEffect(() => {
-        user && createNewUser();
-    }, [user]);
-
-    const createNewUser = async () => {
-        const result = await axios.post('/api/user');
-    }
-
-    return (
-        <div>
-            {children}
-        </div>
-    )
+    return children;
 }
 
 // Custom hook to use auth

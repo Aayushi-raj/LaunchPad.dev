@@ -2,20 +2,19 @@ import { NextRequest, NextResponse } from "next/server";
 import { eq } from "drizzle-orm";
 import { db } from "@/configs/db";
 import { usersTable } from "@/configs/schema";
-import { currentUser } from "@clerk/nextjs/server";
 
 export async function POST(req: NextRequest) {
     try {
-        const user = await currentUser();
+        const user = await req.json();
 
-        if (!user || !user.primaryEmailAddress?.emailAddress) {
+        if (!user || !user.email) {
             return NextResponse.json(
                 { error: "Unauthorized or missing email address" },
                 { status: 401 }
             );
         }
 
-        const email = user.primaryEmailAddress.emailAddress;
+        const email = user.email;
 
         // Check if user already exists
         const existingUsers = await db
@@ -31,7 +30,7 @@ export async function POST(req: NextRequest) {
         const insertedUsers = await db
             .insert(usersTable)
             .values({
-                name: user.fullName ?? "",
+                    name: user.name ?? "",
                 email: email,
             })
             .returning();

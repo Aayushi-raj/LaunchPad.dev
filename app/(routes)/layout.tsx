@@ -1,19 +1,19 @@
 import React from 'react'
-import DashboardProvider from './provider';
-import "@/app/globals.css";
-
+import DashboardProvider from './provider'
+import '@/app/globals.css'
 
 function DashboardLayout({
-    children,
+  children,
 }: Readonly<{
-    children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-
-    return (
-        <DashboardProvider>
-            {children}
-        </DashboardProvider>
-    )
+  return (
+    <html lang="en">
+      <body className="bg-background text-foreground">
+        <DashboardProvider>{children}</DashboardProvider>
+      </body>
+    </html>
+  )
 }
 
 export default DashboardLayout

@@ -6,12 +6,9 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
-<<<<<<< HEAD
-=======
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
 
 interface Message {
   role: "user" | "assistant";
@@ -38,15 +35,6 @@ export default function CareerChat() {
     setIsLoading(true);
 
     try {
-<<<<<<< HEAD
-      const response = await fetch("/api/career-chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
-      });
-
-      const data = await response.json();
-=======
       // Prepare conversation history for the API (excluding the initial welcome message)
       const conversationHistory = messages
         .slice(1) // Skip the initial welcome message
@@ -70,7 +58,6 @@ export default function CareerChat() {
         throw new Error(data.error);
       }
       
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
       setMessages((prev) => [...prev, { role: "assistant", content: data.response }]);
     } catch (error) {
       console.error("Error:", error);
@@ -113,12 +100,6 @@ export default function CareerChat() {
                   className={`max-w-[80%] rounded-lg p-3 ${
                     message.role === "user"
                       ? "bg-primary text-primary-foreground"
-<<<<<<< HEAD
-                      : "bg-muted"
-                  }`}
-                >
-                  {message.content}
-=======
                       : "bg-red-100"
                   }`}
                 >
@@ -135,7 +116,6 @@ export default function CareerChat() {
                   ) : (
                     message.content
                   )}
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
                 </div>
               </div>
             ))}

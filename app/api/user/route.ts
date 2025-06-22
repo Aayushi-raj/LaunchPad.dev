@@ -19,11 +19,7 @@ export async function POST(req: NextRequest) {
             );
         }
 
-<<<<<<< HEAD
         const email = user.primaryEmailAddress.emailAddress;
-=======
-        const email = user.email;
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
 
         // Check if user already exists in DB
         const existingUsers = await db

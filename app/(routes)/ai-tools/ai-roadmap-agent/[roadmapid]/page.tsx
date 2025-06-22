@@ -14,18 +14,6 @@ function RoadmapGeneratorAgent() {
             roadmapid && GetRoadmapDetails();
         }, [roadmapid]
     )
-<<<<<<< HEAD
-    const GetRoadmapDetails = async () => {
-        try {
-            const result = await axios.get(`/api/history?recordId=${roadmapid}`);
-            console.log(result.data);
-            setRoadMapDetail(result.data?.content);
-        } catch (error) {
-            console.error("Error fetching roadmap details:", error);
-        }
-    }
-
-=======
    const GetRoadmapDetails = async () => {
   try {
     const result = await axios.get(`/api/history?recordId=${roadmapid}`);
@@ -57,15 +45,11 @@ function RoadmapGeneratorAgent() {
 
 
 
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
     return (
         <div className='grid grid-cols-1 md:grid-cols-3 gap-5'>
             <div className='border rounded-xl p-5'>
                 DEtails
-<<<<<<< HEAD
-=======
                 
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
                 <h2 className='font-bold text-2xl'>{roadMapDetail?.roadmapTitle}</h2>
                 <p className='mt-3 text-gray-400'>description:{roadMapDetail?.description}</p>
                 <h2 className='mt-5 font-medium text-blue-600'> duration:{roadMapDetail?.duration}</h2>

@@ -1,13 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-<<<<<<< HEAD
-    domains: [
-      "img.clerk.com",
-      "images.clerk.dev",
-      "uploadthing.com",
-      "utfs.io",
-=======
     remotePatterns: [
       {
         protocol: "https",
@@ -25,7 +18,6 @@ const nextConfig = {
         protocol: "https",
         hostname: "utfs.io",
       },
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
     ],
   },
   typescript: {
@@ -37,7 +29,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-<<<<<<< HEAD
-=======
-
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb

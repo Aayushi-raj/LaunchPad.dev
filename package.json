@@ -1,13 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "LaunchPad.dev",
-=======
-<<<<<<< HEAD
-  "name": "LaunchPad.dev",
-=======
-  "name": "launchpad-dev",
->>>>>>> 548819d608b309b6ab036ddad8c04c3684d28c15
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -18,7 +10,6 @@
   },
   "dependencies": {
     "@azure/openai": "^2.0.0",
-<<<<<<< HEAD
     "@clerk/nextjs": "^6.20.0",
     "@inngest/agent-kit": "^0.8.0",
     "@langchain/community": "^0.3.47",
@@ -26,28 +17,13 @@
     "@radix-ui/react-avatar": "^1.0.4",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-popover": "^1.0.7",
-    "@radix-ui/react-scroll-area": "^1.0.5",
-=======
-    "@google/genai": "^1.5.1",
-    "@inngest/agent-kit": "^0.8.0",
-    "@neondatabase/serverless": "^0.10.4",
-<<<<<<< HEAD
-    "@radix-ui/react-avatar": "^1.0.4",
-    "@radix-ui/react-dialog": "^1.1.14",
-=======
-    "@radix-ui/react-avatar": "^1.1.10",
-    "@radix-ui/react-dialog": "^1.0.5",
->>>>>>> 548819d608b309b6ab036ddad8c04c3684d28c15
-    "@radix-ui/react-popover": "^1.0.7",
     "@radix-ui/react-progress": "^1.1.7",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-select": "^2.2.5",
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.12",
     "@radix-ui/react-tooltip": "^1.0.7",
-<<<<<<< HEAD
     "@types/uuid": "^10.0.0",
     "@xyflow/react": "^12.7.0",
     "axios": "^1.7.9",
@@ -65,11 +41,15 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -78,53 +58,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.25",
     "postcss": "^8.5.5",
-=======
-<<<<<<< HEAD
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.10",
-=======
-    "@xyflow/react": "^12.7.0",
->>>>>>> 548819d608b309b6ab036ddad8c04c3684d28c15
-    "axios": "^1.7.9",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
-    "date-fns": "^4.1.0",
-    "dotenv": "^16.4.7",
-    "drizzle-orm": "^0.39.1",
-    "framer-motion": "^12.18.1",
-    "inngest": "^3.39.1",
-    "lucide-react": "^0.323.0",
-    "mime": "^4.0.7",
-    "next": "14.2.25",
-    "openai": "^5.3.0",
-    "react": "^18",
-    "react-day-picker": "^9.7.0",
-    "react-dom": "^18",
-<<<<<<< HEAD
-    "react-markdown": "^10.1.0",
-    "rehype-raw": "^7.0.0",
-    "remark-gfm": "^4.0.1",
-=======
-    "react-icons": "^5.5.0",
->>>>>>> 548819d608b309b6ab036ddad8c04c3684d28c15
-    "tailwind-merge": "^2.2.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20.19.1",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "autoprefixer": "^10.4.17",
-    "drizzle-kit": "^0.31.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.25",
-    "postcss": "^8.4.31",
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
     "tailwindcss": "^3.4.17",
-    "tailwindcss-animate": "^1.0.7",
     "typescript": "^5"
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb

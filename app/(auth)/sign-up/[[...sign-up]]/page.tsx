@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-import { SignUp } from '@clerk/nextjs'
-
-export default function Page() {
-    return <div className='flex items-center justify-center h-screen'>
-        <SignUp />
-    </div>
-=======
 "use client"
 
 import { useRouter } from "next/navigation";
@@ -29,5 +21,4 @@ export default function SignUpPage() {
       </div>
     </div>
   );
->>>>>>> cb902a7af06325460e15629bc8f374a648e17ecb
 }

@@ -24,6 +24,7 @@ interface ChatRoom {
     avatar: string;
   }[];
   lastMessage?: string;
+  online: boolean;
 }
 
 const mockChatRooms: ChatRoom[] = [
@@ -35,7 +36,8 @@ const mockChatRooms: ChatRoom[] = [
       { name: 'John Doe', avatar: '/avatars/john.jpg' },
       { name: 'You', avatar: '/avatars/you.jpg' }
     ],
-    lastMessage: 'Let\'s schedule our next meeting'
+    lastMessage: 'Let\'s schedule our next meeting',
+    online: true
   },
   {
     id: '2',
@@ -45,7 +47,19 @@ const mockChatRooms: ChatRoom[] = [
       { name: 'Jane Smith', avatar: '/avatars/jane.jpg' },
       { name: 'You', avatar: '/avatars/you.jpg' }
     ],
-    lastMessage: 'I\'ve shared the latest research paper'
+    lastMessage: 'I\'ve shared the latest research paper',
+    online: false
+  },
+  {
+    id: '3',
+    name: 'Startup Founders',
+    participants: [
+      { name: 'Emily Park', avatar: '/avatars/emily.jpg' },
+      { name: 'Priya Singh', avatar: '/avatars/priya.jpg' },
+      { name: 'You', avatar: '/avatars/you.jpg' }
+    ],
+    lastMessage: 'Pitch deck is ready!',
+    online: true
   }
 ];
 
@@ -76,6 +90,24 @@ const mockMessages: Message[] = [
     },
     content: 'Great! I\'ll review your PR later today.',
     timestamp: '10:35 AM'
+  },
+  {
+    id: '4',
+    sender: {
+      name: 'Sarah Chen',
+      avatar: '/avatars/sarah.jpg'
+    },
+    content: 'Thanks! Also, let\'s discuss the new UI design.',
+    timestamp: '10:36 AM'
+  },
+  {
+    id: '5',
+    sender: {
+      name: 'You',
+      avatar: '/avatars/you.jpg'
+    },
+    content: 'Sure, I have some ideas to share.',
+    timestamp: '10:37 AM'
   }
 ];
 
@@ -125,7 +157,7 @@ export default function TeamChat() {
                 <Button
                   key={room.id}
                   variant={selectedRoom === room.id ? 'secondary' : 'ghost'}
-                  className="w-full justify-start"
+                  className="w-full justify-start relative group"
                   onClick={() => setSelectedRoom(room.id)}
                 >
                   <div className="flex items-center gap-2">
@@ -138,12 +170,16 @@ export default function TeamChat() {
                       ))}
                     </div>
                     <div className="text-left">
-                      <div className="font-medium">{room.name}</div>
+                      <div className="font-medium flex items-center gap-2">
+                        {room.name}
+                        {room.online && <span className="ml-1 h-2 w-2 rounded-full bg-green-400 animate-pulse" title="Online" />}
+                      </div>
                       <div className="text-xs text-muted-foreground truncate">
                         {room.lastMessage}
                       </div>
                     </div>
                   </div>
+                  {room.online && <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-green-500 font-semibold">Online</span>}
                 </Button>
               ))}
             </div>
@@ -161,7 +197,7 @@ export default function TeamChat() {
         <CardContent className="flex flex-col h-[500px]">
           <ScrollArea className="flex-1 pr-4">
             <div className="space-y-4">
-              {messages.map((message) => (
+              {messages.map((message, idx) => (
                 <div
                   key={message.id}
                   className={`flex gap-2 ${
@@ -175,17 +211,17 @@ export default function TeamChat() {
                     </Avatar>
                   )}
                   <div
-                    className={`max-w-[70%] rounded-lg p-3 ${
+                    className={`max-w-[70%] rounded-2xl p-4 shadow-lg ${
                       message.sender.name === 'You'
-                        ? 'bg-primary text-primary-foreground'
-                        : 'bg-muted'
-                    }`}
+                        ? 'bg-gradient-to-tr from-blue-400 to-pink-400 text-white'
+                        : 'bg-white border border-gray-200'
+                    } animate-fadeIn`}
                   >
                     {message.sender.name !== 'You' && (
-                      <div className="font-medium text-sm mb-1">{message.sender.name}</div>
+                      <div className="font-medium text-sm mb-1 text-blue-700">{message.sender.name}</div>
                     )}
                     <div>{message.content}</div>
-                    <div className="text-xs opacity-70 mt-1">{message.timestamp}</div>
+                    <div className="text-xs opacity-70 mt-1 text-right">{message.timestamp}</div>
                   </div>
                   {message.sender.name === 'You' && (
                     <Avatar className="h-8 w-8">
@@ -195,6 +231,14 @@ export default function TeamChat() {
                   )}
                 </div>
               ))}
+              {/* Typing indicator */}
+              <div className="flex gap-2 justify-start items-center animate-pulse">
+                <Avatar className="h-8 w-8">
+                  <AvatarImage src="/avatars/sarah.jpg" alt="Sarah Chen" />
+                  <AvatarFallback>S</AvatarFallback>
+                </Avatar>
+                <div className="bg-gray-200 rounded-2xl px-4 py-2 text-sm text-gray-600">Sarah is typing...</div>
+              </div>
               <div ref={messagesEndRef} />
             </div>
           </ScrollArea>
@@ -211,4 +255,4 @@ export default function TeamChat() {
       </Card>
     </div>
   );
-} 
+}

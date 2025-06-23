@@ -39,7 +39,7 @@ function RoadmapGeneratorDialog({ openDialog, setOpenDialog }: any) {
 
     return (
         <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-            <DialogContent>
+            <DialogContent className="bg-gradient-to-br from-blue-200 via-purple-100 to-pink-200">
                 <DialogHeader>
                     <DialogTitle>Enter position/skills to generate roadmap</DialogTitle>
                     <DialogDescription asChild>

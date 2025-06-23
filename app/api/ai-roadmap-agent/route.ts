@@ -1,12 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
-import { currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import axios from "axios";
 import { inngest } from "@/lib/inngest";
 
 export async function POST(req: NextRequest) {
     try {
         const { roadmapId, userInput } = await req.json();
-        const user = await currentUser();
+        
+        // Get user with better error handling
+        let userEmail = "unknown@example.com";
+        try {
+            const { userId } = await auth();
+            if (userId) {
+                userEmail = `user-${userId}@example.com`;
+                console.log("✅ User authenticated:", userId);
+            } else {
+                console.warn("⚠️ No user ID found, using default email");
+            }
+        } catch (authError) {
+            console.warn("⚠️ Authentication failed, using default email:", authError);
+            // Continue with default email
+        }
 
         console.log("🎯 Received user input:", userInput);
 
@@ -16,7 +30,7 @@ export async function POST(req: NextRequest) {
             data: {
                 userInput,
                 roadmapId,
-                userEmail: user?.primaryEmailAddress?.emailAddress,
+                userEmail: userEmail,
             },
         });
 

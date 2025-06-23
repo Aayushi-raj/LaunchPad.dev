@@ -179,8 +179,27 @@ export async function GET(req: NextRequest) {
     };
 
 
-    const formatted = "```json\n" + JSON.stringify(roadmapData, null, 2) + "\n```";
+    const formatted = "json\n" + JSON.stringify(roadmapData, null, 2) + "\n";
 
     return NextResponse.json({ content: formatted });
 }
 
+export async function POST(req: NextRequest) {
+    try {
+        const { recordId, content } = await req.json();
+
+        if (!recordId) {
+            return NextResponse.json({ error: 'Missing recordId' }, { status: 400 });
+        }
+
+        // TODO: Implement logic to save the history record to the database
+        console.log(`Received history record for ID: ${recordId}`);
+        console.log('Content:', content);
+
+        return NextResponse.json({ success: true, recordId: recordId });
+
+    } catch (error) {
+        console.error('Error in POST /api/history:', error);
+        return NextResponse.json({ error: 'Failed to process request' }, { status: 500 });
+    }
+}

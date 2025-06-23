@@ -103,17 +103,17 @@ const items = [
     },
     {
         title: "Career Analytics",
-        url: "#",
+        url: "/career-analytics",
         icon: LineChart,
     },
     {
         title: "Learning History",
-        url: "#",
+        url: "/learning-history",
         icon: Globe2,
     },
     {
         title: "Profile Settings",
-        url: "#",
+        url: "/profile-settings",
         icon: UserCircle,
     },
 ]
